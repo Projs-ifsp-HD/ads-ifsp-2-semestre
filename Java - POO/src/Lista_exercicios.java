@@ -70,16 +70,22 @@ public class Lista_exercicios {
 		System.out.print("Digite um número para B: ");
 		b = ler.nextFloat();
 		
+		if(a > 0 && b > 0){
+			resAB = 'V';
+		}else{
+			resAB = 'F';
+		}
+		
 		if(a < 0){
 			resA = 'F';
+		}else{
+			resA = 'V';
 		}
 		
 		if(b < 0){
 			resB = 'F';
-		}
-		
-		if(resA == 'F'){
-			resAB = 'F';
+		}else{
+			resB = 'V';
 		}
 		
 		System.out.print("\n" +
