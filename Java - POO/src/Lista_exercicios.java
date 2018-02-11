@@ -4,13 +4,10 @@ public class Lista_exercicios {
 	public static void main(String[] args) {
 	//digite o execicio que deseja .
 		
-		Ex11();
+		Ex6();
 		
 		
 	}
-	
-	
-	
 	
 	private static int Ex1(){
 		int n;
@@ -30,6 +27,17 @@ public class Lista_exercicios {
 		return 0;
 	}
 	
+	private static void Ex3(){
+		float n;
+		Scanner ler = new Scanner(System.in);
+		System.out.print("Digite um nÃºmero: ");
+		n = ler.nextFloat();
+		if(n > 50){
+			System.out.print("O nÃºmero Ã© maior que 50");
+		}
+		
+	}
+
 	private static float Ex4(){
 		float n;
 		Scanner ler = new Scanner(System.in);
@@ -212,7 +220,7 @@ public class Lista_exercicios {
 	}
 	
 	private static int Ex11(){
-		//Escreva um programa que leia dois números inteiros A e B quaisquer indicando se A é múltiplo de B ou se B é múltiplo de A.
+		//Escreva um programa que leia dois nï¿½meros inteiros A e B quaisquer indicando se A ï¿½ mï¿½ltiplo de B ou se B ï¿½ mï¿½ltiplo de A.
 		float a,b;
 		
 		Scanner ler = new Scanner(System.in);
@@ -234,6 +242,12 @@ public class Lista_exercicios {
 		}
 		
 		
+		return 0;
+	}
+	
+	private static int Ex12(){
+		//Escreva um programa que leia dois nï¿½meros inteiros A e B quaisquer indicando se A ï¿½ mï¿½ltiplo de B ou se B ï¿½ mï¿½ltiplo de A.
+		System.out.print("Teste");
 		return 0;
 	}
 }
