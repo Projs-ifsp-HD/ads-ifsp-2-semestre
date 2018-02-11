@@ -248,6 +248,7 @@ public class Lista_exercicios {
 	private static int Ex12(){
 		//Escreva um programa que leia dois n�meros inteiros A e B quaisquer indicando se A � m�ltiplo de B ou se B � m�ltiplo de A.
 		System.out.print("Teste");
+		System.out.print("Teste2");
 		return 0;
 	}
 }
