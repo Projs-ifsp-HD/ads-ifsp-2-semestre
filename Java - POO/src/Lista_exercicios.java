@@ -76,13 +76,13 @@ public class Lista_exercicios {
 			resAB = 'F';
 		}
 		
-		if(a < 0){
+		if(a <= 0){
 			resA = 'F';
 		}else{
 			resA = 'V';
 		}
 		
-		if(b < 0){
+		if(b <= 0){
 			resB = 'F';
 		}else{
 			resB = 'V';
