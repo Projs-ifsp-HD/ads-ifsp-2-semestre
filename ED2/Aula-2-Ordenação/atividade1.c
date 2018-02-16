@@ -7,6 +7,7 @@
 
 //Protótiposkhdskfhdjskfhjkdshfjkdsk
 //fdfsdfsdfsd
+//gdfdf
 void Ordena_bubleSort(int *v,int n);
 
 int main(){
