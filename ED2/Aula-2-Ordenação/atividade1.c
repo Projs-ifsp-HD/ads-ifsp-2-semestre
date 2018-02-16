@@ -5,7 +5,7 @@
 #include <time.h>
 #include <locale.h>
 
-//Protótipos
+//Protótiposkhdskfhdjskfhjkdshfjkdsk
 void Ordena_bubleSort(int *v,int n);
 
 int main(){
