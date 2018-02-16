@@ -6,6 +6,7 @@
 #include <locale.h>
 
 //Protótiposkhdskfhdjskfhjkdshfjkdsk
+//fdfsdfsdfsd
 void Ordena_bubleSort(int *v,int n);
 
 int main(){
