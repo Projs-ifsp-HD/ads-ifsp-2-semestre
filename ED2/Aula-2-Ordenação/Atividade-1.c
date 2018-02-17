@@ -5,7 +5,13 @@
 #include <time.h>
 #include <locale.h>
 
+<<<<<<< HEAD:ED2/Aula-2-Ordenação/Atividade-1.c
 //BUBLESORT - ATIVIDDE 1
+=======
+//Prot�tiposkhdskfhdjskfhjkdshfjkdsk
+//fdfsdfsdfsd
+//gdfdf
+>>>>>>> d8f75e6f95fcf2c54ece87d9573e05e41faf5a1c:ED2/Aula-2-Ordenação/atividade1.c
 void Ordena_bubleSort(int *v,int n);
 
 int main(){
