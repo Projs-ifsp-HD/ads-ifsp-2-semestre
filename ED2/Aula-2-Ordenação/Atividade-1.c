@@ -5,14 +5,19 @@
 #include <time.h>
 #include <locale.h>
 
-//Protótipos
+//BUBLESORT - ATIVIDDE 1
 void Ordena_bubleSort(int *v,int n);
 
 int main(){
-    v[7]={110,100,130,140,120,160,150}
-    n = 7;
+   int v[10]={190,170,110,180,140,130,120,160,150,100};
+   int n = 10,i;
     setlocale(LC_ALL,"");
-
+    printf("Vetor Desordenado:\n");
+    for(i = 0; i < n; i++){
+		printf("%d ", v[i]);
+	}
+	printf("\n");
+	printf("Vetor Ordenado:\n");
     Ordena_bubleSort(v , n);
 
     return 0;
@@ -20,7 +25,7 @@ int main(){
 
 //Funções
 void Ordena_bubleSort(int *v,int n){
-   int i, continua, aux,fim = n;
+   int i, continua, aux,fim = n,count=0;
    do{
     continua = 0;
     for(i = 0 ; i < fim - 1 ;i++){
@@ -33,4 +38,8 @@ void Ordena_bubleSort(int *v,int n){
     }
     fim--;
    }while(continua != 0);
+
+    for(i = 0; i < n; i++){
+		printf("%d ", v[i]);
+	}
 }
