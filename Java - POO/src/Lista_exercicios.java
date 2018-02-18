@@ -392,15 +392,15 @@ public class Lista_exercicios {
 	
 	private static void Ex18(){
 		Scanner ler = new Scanner(System.in);
-		int n, resultado, res;
+		int n, dezena, unidade;
 		
 		System.out.print("Informe um número: ");
 			n = ler.nextInt();
 		if(n >= 0 && n <= 100){
-			if(n > 10){
-				resultado = n/10;
-				res = n%10;
-				switch(resultado){
+			
+				dezena = n/10;
+				unidade = n%10;
+				switch(dezena){
 				 case 1: 
 					 	System.out.print("\nDez");
 					 	break;
@@ -432,7 +432,7 @@ public class Lista_exercicios {
 				
 				System.out.print(" e ");
 				
-				switch(res){
+				switch(unidade){
 				 case 1: 
 					 	System.out.print("um");
 					 	break;
@@ -461,7 +461,7 @@ public class Lista_exercicios {
 					 	System.out.print("nove");
 					 	break;
 				}
-			}
+			
 		}else{
 			System.out.print("\nNúmero inválido");
 		}
