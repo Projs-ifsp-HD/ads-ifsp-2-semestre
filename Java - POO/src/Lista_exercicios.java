@@ -366,24 +366,6 @@ public class Lista_exercicios {
 		
 		return 0;
 	}
-	private static float Ex16(){
-		/*. Preparar um programa para ler as medidas da base e da altura de um triângulo, calculando e imprimindo sua área,
-			sabendo que o cálculo da área é dado por: area = (base*altura)/2*/ 
-		float area,altura,base;
-		Scanner ler = new Scanner(System.in);
-		
-		System.out.print("Digite a altura do triangulo: ");
-		altura = ler.nextFloat();
-		
-		System.out.print("Digite a base do triangulo: ");
-		base = ler.nextFloat();
-		
-		area = (base * altura)/2;
-		
-			System.out.print("A area do seu triangulo e  : " + area);
-		
-		return 0;
-	}
 	
 	private static void Ex17(){
 		Scanner ler = new Scanner(System.in);
