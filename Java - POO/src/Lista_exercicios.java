@@ -802,6 +802,9 @@ public class Lista_exercicios {
 			}
 			
 			switch(unidade){
+			 case 0:
+				 System.out.print("zero");
+				 	break;
 			 case 1: 
 				 	System.out.print("um");
 				 	break;
