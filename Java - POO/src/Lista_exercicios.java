@@ -335,6 +335,29 @@ public class Lista_exercicios {
 		return 0;
 	}
 	
+	private static void Ex17(){
+		Scanner ler = new Scanner(System.in);
+		int horas = 0, minutos = 0, segundos;
+
+		System.out.print("Informe os segundos: ");
+		segundos = ler.nextInt();
+		
+		if(segundos < 0){
+			System.out.print("\nA conversão não pode ser efetuada. " +
+					"\nFoi informado um valor negativo");
+		}else{
+			
+			minutos = segundos/60;
+			horas = minutos/60;
+			segundos = segundos%60;
+			
+			if(minutos >= 60){
+				minutos = minutos%60;
+			}
+			System.out.print("\nHorario: " + horas + "h:" + minutos + "m:" + segundos  + "s");
+		}
+	}
+	
 	//EX 18 
 	
 	private static float Ex20(){
@@ -437,6 +460,24 @@ public class Lista_exercicios {
 		}
 	}
 	
+	private static void Ex25(){
+		Scanner ler = new Scanner(System.in);
+		int a, i, soma = 0, n;
+	
+		System.out.print("Quantos numeros quer somar: ");
+		n = ler.nextInt();
+		System.out.print("\n");
+		for(i=0; i < n; i++){
+			System.out.print("Digite o " + (i+1) + "º número: ");
+			a = ler.nextInt();
+			soma = soma + a;
+		}
+			
+		
+		
+		System.out.print("\nSoma: " + soma);
+	}
+	
 	private static void Ex26(){
 		/*. Escreva um programa que calcule a soma de N números quaisquer fornecidos pelo usuário. O programa deve parar de ler
 			e, portanto somar os valores quando for introduzido o número 0 (zero). 
@@ -454,6 +495,46 @@ public class Lista_exercicios {
 		}while (numero != 0);
 	}
 	
+	private static void Ex27(){
+		Scanner ler = new Scanner(System.in);
+		int cont = 0, soma = 0, nota;
+	
+		do{
+			System.out.print("Digite a nota " + (cont+1) + ": ");
+			nota = ler.nextInt();
+			if(nota >= 0){
+				soma = soma + nota;
+				cont++;
+			}
+		}while(nota >= 0);
+		
+		System.out.print("\nMédia: " + soma/(cont));
+		
+	}
+	
+	private static void Ex28(){
+		Scanner ler = new Scanner(System.in);
+		int a = -1, b = -2, c = -3;
+		
+		System.out.print("Digite um número entre 0 e 1: ");
+		a = ler.nextInt();
+		System.out.print("Digite um número entre 0 e 1: ");
+		b = ler.nextInt();
+		System.out.print("Digite um número entre 0 e 1: ");
+		c = ler.nextInt();
+		
+		if(a < 0 || a > 1 || b < 0 || b > 1 || c < 0 || c > 1){
+			System.out.print("\nNúmeros inválido");
+		}else{
+			if(a > 0 && b > 0 && c > 0){
+				System.out.print("V");
+			}else if(a < 0 && b < 0 && c < 0){
+				System.out.print("V");
+			}else{
+				System.out.print("F");
+			}
+		}
+	}		
 	
 	
 }
