@@ -500,6 +500,111 @@ public class Lista_exercicios {
 		
 	} 
 	
+	private static void Ex19(){
+		Scanner ler = new Scanner(System.in);
+		float n, dezena, unidade;
+		
+		System.out.print("Informe um número: ");
+			n = ler.nextFloat();
+			
+		float resultado, res;
+		
+		//SEPARA O VALOR DEPOIS DA VIRGULA
+		resultado = n*100;
+		res =  resultado%100;
+		System.out.print("res: " + resultado);
+		System.out.print("\nres: " + (int)res);
+		/*if(n >= 0 && n <= 100){
+				if(n > 10 && n < 16){
+					switch(n){
+					case 11: 
+						System.out.print("\nOnze");
+							break;
+					case 12: 
+						System.out.print("\nDoze");
+							break;
+					case 13: 
+						System.out.print("\nTreze");
+							break;
+					case 14: 
+						System.out.print("\nQuatorze");
+							break;
+					case 15: 
+						System.out.print("\nQuinze");
+							break;
+					}
+				}else{
+					dezena = n/10;
+					unidade = n%10;
+					
+					switch(dezena){
+					 case 1: 
+						 	System.out.print("\nDez");
+						 	break;
+					 case 2: 
+						 	System.out.print("\nVinte e ");
+						 	break;
+					 case 3: 
+						 	System.out.print("\nTrinta e ");
+						 	break;
+					 case 4: 
+						 	System.out.print("\nQuarenta e ");
+						 	break;
+					 case 5: 
+						 	System.out.print("\nCinquenta e ");
+						 	break;
+					 case 6: 
+						 	System.out.print("\nSessenta e ");
+						 	break;
+					 case 7: 
+						 	System.out.print("\nSetenta e ");
+						 	break;
+					 case 8: 
+						 	System.out.print("\nOitenta e ");
+						 	break;
+					 case 9: 
+						 	System.out.print("\nNoventa e ");
+						 	break;
+					}
+					
+					switch(unidade){
+					 case 1: 
+						 	System.out.print("um");
+						 	break;
+					 case 2: 
+						 	System.out.print("dois");
+						 	break;
+					 case 3: 
+						 	System.out.print("três");
+						 	break;
+					 case 4: 
+						 	System.out.print("quatro");
+						 	break;
+					 case 5: 
+						 	System.out.print("cinco");
+						 	break;
+					 case 6: 
+						 	System.out.print("seis");
+						 	break;
+					 case 7: 
+						 	System.out.print("sete");
+						 	break;
+					 case 8: 
+						 	System.out.print("oito");
+						 	break;
+					 case 9: 
+						 	System.out.print("nove");
+						 	break;
+					}
+				}
+				
+				
+			
+		}else{
+			System.out.print("\nNúmero inválido");
+		}*/
+	}
+	
 	private static float Ex20(){
 		/*. Preparar um programa para ler as medidas da base e da altura de um triângulo, calculando e imprimindo sua área,
 			sabendo que o cálculo da área é dado por: area = (base*altura)/2*/ 
