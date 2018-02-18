@@ -270,6 +270,34 @@ public class Lista_exercicios {
 		return 0;
 	}
 	
+	private static void Ex13(){
+		Scanner ler = new Scanner(System.in);
+		float a, b, c;
+		System.out.print("Digite um valor para o lado A: ");
+			a = ler.nextFloat();
+		System.out.print("Digite um valor para o lado B: ");
+			b = ler.nextFloat();
+		System.out.print("Digite um valor para o lado C: ");
+			c = ler.nextFloat();
+		
+		if(a == 0 || b == 0 || c == 0){
+			System.out.print("\nNão é um triangulo");
+		}else{
+			if(a < (b+c) || b < (a+c) || c < (a+b)){
+				System.out.print("\nÉ um triangulo ");
+			}
+			
+			if(a != b && a != c && b != c){
+				System.out.print("Escaleno");
+			}
+			else if(a == b && a == c && b == c){
+				System.out.print("Equilátero");
+			}
+			else if(a == b || a == c || b == c){
+				System.out.print("Isósceles");
+			}
+		}
+	
 	private static float Ex14(){
 		/*Escreva um programa que leia 3 notas (valores reais), calculando e exibindo sua média aritmética. Imprima também
 		"Aprovado" se a média for maior que 7, "Reprovado" se for menor que 3 e "Exame" se estiver entre 3 e 7.*/ 
@@ -296,6 +324,28 @@ public class Lista_exercicios {
 		}
 		
 		return 0;
+	}
+	
+	private static void Ex15(){
+		Scanner ler = new Scanner(System.in);
+		int x, y;
+		
+		System.out.print("Digite um valor para X: ");
+			x = ler.nextInt();
+		System.out.print("Digite um valor para X: ");
+			y = ler.nextInt();
+		
+		System.out.print("\nSoma dos valores: " + (x+y));
+		System.out.print("\nProduto dos valores: " + (x*y));
+		
+		if(x > y){
+			System.out.print("\nX é maior que Y");
+		}
+		else if( x == y){
+			System.out.print("\nX é igual Y");
+		}else{
+			System.out.print("\nX é menor que Y");
+		}
 	}
 	
 	private static float Ex16(){
@@ -382,6 +432,32 @@ public class Lista_exercicios {
 		return 0;
 	}
 	
+	private static void Ex21(){
+		Scanner ler = new Scanner(System.in);
+		float a, b, c, delta;
+		double x1 = 0, x2 = 0;
+		
+		System.out.print("Valor de A: ");
+			a = ler.nextFloat();
+		System.out.print("Valor de A: ");
+			b = ler.nextFloat();
+		System.out.print("Valor de A: ");
+			c = ler.nextFloat();
+		
+		delta = ((b*b)-(4*a*c));
+		
+		if(delta >= 0){
+			x1 = (-b + (Math.sqrt (delta) )) / ( 2*a );
+			x2 = (-b + (Math.sqrt (delta) )) / ( 2*a );
+			
+			System.out.print("\nX1 = " + x1);
+			System.out.print("\nX2 = " + x2);
+		}else{
+			System.out.println("\nDelta invalido");
+		}
+		
+	}
+	
 	private static void Ex22(){
 		/*Considerando um objeto móvel em movimento uniformemente variado, escreva um programa que receba as seguintes
 		informações: um valor real indicando posição inicial do móvel P0, um valor real que corresponde a velocidade do móvel
@@ -408,6 +484,24 @@ public class Lista_exercicios {
 		pf = (po + ( v * t ) + ( ( a * Math.pow( t,2 )  ) / 2 ) );
 		
 		System.out.print("A Posição final é : " + pf);
+	}
+	
+	private static void Ex23(){
+		Scanner ler = new Scanner(System.in);
+		float pv, j;
+		double fv;
+		int n;
+		
+		System.out.print("Informe o capital inicial: ");
+			pv = ler.nextFloat();
+		System.out.print("Informe a taxa de juros ");
+			j = ler.nextFloat();
+		System.out.print("Informe o número de aplicações: ");
+			n = ler.nextInt();
+		
+		fv = pv * (Math.pow(1+j, n));
+		
+		System.out.print("\nResultado: " + fv);
 	}
 	
 	private static void Ex24(){
