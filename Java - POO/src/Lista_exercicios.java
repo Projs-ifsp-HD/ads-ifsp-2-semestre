@@ -390,7 +390,82 @@ public class Lista_exercicios {
 		}
 	}
 	
-	//EX 18 
+	private static void Ex18(){
+		Scanner ler = new Scanner(System.in);
+		int n, resultado, res;
+		
+		System.out.print("Informe um número: ");
+			n = ler.nextInt();
+		if(n >= 0 && n <= 100){
+			if(n > 10){
+				resultado = n/10;
+				res = n%10;
+				switch(resultado){
+				 case 1: 
+					 	System.out.print("\nDez");
+					 	break;
+				 case 2: 
+					 	System.out.print("\nVinte");
+					 	break;
+				 case 3: 
+					 	System.out.print("\nTrinta");
+					 	break;
+				 case 4: 
+					 	System.out.print("\nQuarenta");
+					 	break;
+				 case 5: 
+					 	System.out.print("\nCinquenta");
+					 	break;
+				 case 6: 
+					 	System.out.print("\nSessenta");
+					 	break;
+				 case 7: 
+					 	System.out.print("\nSetenta");
+					 	break;
+				 case 8: 
+					 	System.out.print("\nOitenta");
+					 	break;
+				 case 9: 
+					 	System.out.print("\nNoventa");
+					 	break;
+				}
+				
+				System.out.print(" e ");
+				
+				switch(res){
+				 case 1: 
+					 	System.out.print("um");
+					 	break;
+				 case 2: 
+					 	System.out.print("dois");
+					 	break;
+				 case 3: 
+					 	System.out.print("três");
+					 	break;
+				 case 4: 
+					 	System.out.print("Quatro");
+					 	break;
+				 case 5: 
+					 	System.out.print("Cinco");
+					 	break;
+				 case 6: 
+					 	System.out.print("Seis");
+					 	break;
+				 case 7: 
+					 	System.out.print("Sete");
+					 	break;
+				 case 8: 
+					 	System.out.print("oito");
+					 	break;
+				 case 9: 
+					 	System.out.print("nove");
+					 	break;
+				}
+			}
+		}else{
+			System.out.print("\nNúmero inválido");
+		}
+	} 
 	
 	private static float Ex20(){
 		/*. Preparar um programa para ler as medidas da base e da altura de um triângulo, calculando e imprimindo sua área,
