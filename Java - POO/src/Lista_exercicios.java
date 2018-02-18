@@ -502,221 +502,27 @@ public class Lista_exercicios {
 	
 	private static void Ex19(){
 		Scanner ler = new Scanner(System.in);
-		float n;
-		int dezena, unidade;
+		float n, reais, centavos;
+		int dezena, unidade, rst;
 		
 		System.out.print("Informe o valor em R$: ");
 			n = ler.nextFloat();
 			
-		float resultado, res;
-		int rst;
-		rst = (int)n;
-		if(rst >= 0 && rst <= 100){
-				if(rst > 10 && rst < 16){
-					switch(rst){
-					case 11: 
-					 	System.out.print("\nOnze");
-					 	break;
-				 case 12: 
-					 	System.out.print("\nDoze");
-					 	break;
-				 case 13: 
-					 	System.out.print("\nTreze");
-					 	break;
-				 case 14: 
-					 	System.out.print("\nQuatorze");
-					 	break;
-				 case 15: 
-					 	System.out.print("\nQuinze");
-					 	break;
-				 case 16: 
-					 	System.out.print("\nDezesseis");
-					 	break;
-				 case 17: 
-					 	System.out.print("\nDezessete");
-					 	break;
-				 case 18: 
-					 	System.out.print("\nDezoito");
-					 	break;
-				 case 19: 
-					 	System.out.print("\nDezenove");
-					 	break;
-				}
-				}else {
-				dezena = rst/10;
-				unidade = rst%10;
-				switch(dezena){
-				
-				 case 1: 
-				 	System.out.print("\nDez");
-				 	break;
-				 case 2: 
-					 	System.out.print("\nVinte");
-					 	break;
-				 case 3: 
-					 	System.out.print("\nTrinta");
-					 	break;
-				 case 4: 
-					 	System.out.print("\nQuarenta");
-					 	break;
-				 case 5: 
-					 	System.out.print("\nCinquenta");
-					 	break;
-				 case 6: 
-					 	System.out.print("\nSessenta");
-					 	break;
-				 case 7: 
-					 	System.out.print("\nSetenta");
-					 	break;
-				 case 8: 
-					 	System.out.print("\nOitenta");
-					 	break;
-				 case 9: 
-					 	System.out.print("\nNoventa");
-					 	break;
-				}
-				
-				if(unidade != 0) {System.out.print(" e ");}
-				
-				switch(unidade){
-				 case 1: 
-					 	System.out.print("um");
-					 	break;
-				 case 2: 
-					 	System.out.print("dois");
-					 	break;
-				 case 3: 
-					 	System.out.print("três");
-					 	break;
-				 case 4: 
-					 	System.out.print("Quatro");
-					 	break;
-				 case 5: 
-					 	System.out.print("Cinco");
-					 	break;
-				 case 6: 
-					 	System.out.print("Seis");
-					 	break;
-				 case 7: 
-					 	System.out.print("Sete");
-					 	break;
-				 case 8: 
-					 	System.out.print("oito");
-					 	break;
-				 case 9: 
-					 	System.out.print("nove");
-					 	break;
-				}
+		if(n > 0 && n < 100){
+			reais = n*100;
+			centavos = reais%100;
+			reais /= 100;
 			
-		}
-		}
-		System.out.print(" Reais e ");
-		//SEPARA O VALOR DEPOIS DA VIRGULA
-		resultado = n*100;
-		res =  resultado%100;
-		rst = (int)res;
-		if(rst >= 0 && rst <= 100){
-				if(rst > 10 && rst < 16){
-					switch(rst){
-					case 11: 
-					 	System.out.print(" Onze");
-					 	break;
-				 case 12: 
-					 	System.out.print(" Doze");
-					 	break;
-				 case 13: 
-					 	System.out.print(" Treze");
-					 	break;
-				 case 14: 
-					 	System.out.print(" Quatorze");
-					 	break;
-				 case 15: 
-					 	System.out.print(" Quinze");
-					 	break;
-				 case 16: 
-					 	System.out.print(" Dezesseis");
-					 	break;
-				 case 17: 
-					 	System.out.print(" Dezessete");
-					 	break;
-				 case 18: 
-					 	System.out.print(" Dezoito");
-					 	break;
-				 case 19: 
-					 	System.out.print(" Dezenove");
-					 	break;
-				}
-				}else {
-				dezena = rst/10;
-				unidade = rst%10;
-				switch(dezena){
-				
-				 case 1: 
-				 	System.out.print(" Dez");
-				 	break;
-				 case 2: 
-					 	System.out.print(" Vinte");
-					 	break;
-				 case 3: 
-					 	System.out.print("Trinta");
-					 	break;
-				 case 4: 
-					 	System.out.print(" Quarenta");
-					 	break;
-				 case 5: 
-					 	System.out.print(" Cinquenta");
-					 	break;
-				 case 6: 
-					 	System.out.print(" Sessenta");
-					 	break;
-				 case 7: 
-					 	System.out.print(" Setenta");
-					 	break;
-				 case 8: 
-					 	System.out.print(" Oitenta");
-					 	break;
-				 case 9: 
-					 	System.out.print(" Noventa");
-					 	break;
-				}
-				
-				if(unidade != 0) {System.out.print(" e ");}
-				
-				switch(unidade){
-				 case 1: 
-					 	System.out.print("um");
-					 	break;
-				 case 2: 
-					 	System.out.print("dois");
-					 	break;
-				 case 3: 
-					 	System.out.print("três");
-					 	break;
-				 case 4: 
-					 	System.out.print("Quatro");
-					 	break;
-				 case 5: 
-					 	System.out.print("Cinco");
-					 	break;
-				 case 6: 
-					 	System.out.print("Seis");
-					 	break;
-				 case 7: 
-					 	System.out.print("Sete");
-					 	break;
-				 case 8: 
-					 	System.out.print("oito");
-					 	break;
-				 case 9: 
-					 	System.out.print("nove");
-					 	break;
-				}
+			escreveExtenso((int) reais);
 			
+			System.out.print(" Reais e ");
+			
+			escreveExtenso((int) centavos);
+			
+			System.out.print(" centavos");
 		}
-
-				System.out.print(" Centavos ");
-		}else{
-			System.out.print("\nNúmero inválido");
+		else{
+			System.out.print("Número inválido");
 		}
 	}
 	
@@ -940,5 +746,90 @@ public class Lista_exercicios {
 		}
 	}		
 	
-	
+	public static void escreveExtenso(int n){
+		int unidade, dezena;
+		
+		if(n > 10 && n < 16){
+			switch(n){
+			case 11: 
+				System.out.print("\nOnze");
+					break;
+			case 12: 
+				System.out.print("\nDoze");
+					break;
+			case 13: 
+				System.out.print("\nTreze");
+					break;
+			case 14: 
+				System.out.print("\nQuatorze");
+					break;
+			case 15: 
+				System.out.print("\nQuinze");
+					break;
+			}
+		}else{
+			dezena = n/10;
+			unidade = n%10;
+			
+			switch(dezena){
+			 case 1: 
+				 	System.out.print("\nDez");
+				 	break;
+			 case 2: 
+				 	System.out.print("\nVinte e ");
+				 	break;
+			 case 3: 
+				 	System.out.print("\nTrinta e ");
+				 	break;
+			 case 4: 
+				 	System.out.print("\nQuarenta e ");
+				 	break;
+			 case 5: 
+				 	System.out.print("\nCinquenta e ");
+				 	break;
+			 case 6: 
+				 	System.out.print("\nSessenta e ");
+				 	break;
+			 case 7: 
+				 	System.out.print("\nSetenta e ");
+				 	break;
+			 case 8: 
+				 	System.out.print("\nOitenta e ");
+				 	break;
+			 case 9: 
+				 	System.out.print("\nNoventa e ");
+				 	break;
+			}
+			
+			switch(unidade){
+			 case 1: 
+				 	System.out.print("um");
+				 	break;
+			 case 2: 
+				 	System.out.print("dois");
+				 	break;
+			 case 3: 
+				 	System.out.print("três");
+				 	break;
+			 case 4: 
+				 	System.out.print("quatro");
+				 	break;
+			 case 5: 
+				 	System.out.print("cinco");
+				 	break;
+			 case 6: 
+				 	System.out.print("seis");
+				 	break;
+			 case 7: 
+				 	System.out.print("sete");
+				 	break;
+			 case 8: 
+				 	System.out.print("oito");
+				 	break;
+			 case 9: 
+				 	System.out.print("nove");
+				 	break;
+			}
+		}
+	}
 }
