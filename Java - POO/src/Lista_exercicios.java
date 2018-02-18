@@ -4,7 +4,7 @@ public class Lista_exercicios {
 	public static void main(String[] args) {
 	//digite o execicio que deseja .
 		
-		Ex16();
+		Ex26();
 		
 		
 	}
@@ -316,4 +316,172 @@ public class Lista_exercicios {
 		
 		return 0;
 	}
+	private static float Ex16(){
+		/*. Preparar um programa para ler as medidas da base e da altura de um triângulo, calculando e imprimindo sua área,
+			sabendo que o cálculo da área é dado por: area = (base*altura)/2*/ 
+		float area,altura,base;
+		Scanner ler = new Scanner(System.in);
+		
+		System.out.print("Digite a altura do triangulo: ");
+		altura = ler.nextFloat();
+		
+		System.out.print("Digite a base do triangulo: ");
+		base = ler.nextFloat();
+		
+		area = (base * altura)/2;
+		
+			System.out.print("A area do seu triangulo e  : " + area);
+		
+		return 0;
+	}
+	
+	//EX 18 
+	
+	private static float Ex20(){
+		/*. Preparar um programa para ler as medidas da base e da altura de um triângulo, calculando e imprimindo sua área,
+			sabendo que o cálculo da área é dado por: area = (base*altura)/2*/ 
+		float metros , pes;
+		Scanner ler = new Scanner(System.in);
+		
+		System.out.print("Digite a medida em metros: ");
+		metros = ler.nextFloat();
+		
+		if(metros > 0 ) {
+		pes = (metros * 3.315f);
+		
+		System.out.print("A medida Digitada em metros  : " + metros);
+		
+		System.out.print("\n A medida convertida para pés : " + pes);
+		
+		}else {
+			System.out.print("Erro valor negativo nao pode ser convertido !!!!");
+		}
+		return 0;
+	}
+	
+	private static void Ex22(){
+		/*Considerando um objeto móvel em movimento uniformemente variado, escreva um programa que receba as seguintes
+		informações: um valor real indicando posição inicial do móvel P0, um valor real que corresponde a velocidade do móvel
+		V, um outro valor real A correspondente a aceleração do móvel e um número inteiro correspondente ao tempo decorrido
+		T. O programa deve calcular a posição final PF do móvel, dado pela relação abaixo:
+		PF = P0 + V * T +  (A * T2) / 2 */
+		float po , v , a;
+		double pf;
+		int t;
+		Scanner ler = new Scanner(System.in);
+		
+		System.out.print("Entre com a posição inicial do movel PO: ");
+		po = ler.nextFloat();
+		
+		System.out.print("Entre com a velocidade do movél V: ");
+		v = ler.nextFloat();
+		
+		System.out.print("Entre com a Acelaração do movel A: ");
+		a = ler.nextFloat();
+		
+		System.out.print("Entre com a o tempo decorrido T: ");
+		t = ler.nextInt();
+		
+		pf = (po + ( v * t ) + ( ( a * Math.pow( t,2 )  ) / 2 ) );
+		
+		System.out.print("A Posição final é : " + pf);
+	}
+	
+	private static void Ex24(){
+		/*. Implementar três programas para exibir a tabuada de um número inteiro entre 1 e 20 dado pelo usuário.
+			a) Usando enquanto (while)
+			b) Usando faça-enquanto (do-while)
+			c) Usando para (for)
+		 */
+		int numero , resultado ,cont = 0 ;
+		
+		Scanner ler = new Scanner(System.in);
+		
+		System.out.print("Entre com um numero entre 1 e 20: ");
+		numero = ler.nextInt();
+		if(numero > 0 || numero <= 20) {
+		//-----metodo While -----
+		
+		System.out.print("-----metodo While -----\n");
+		while (cont <= 10) {
+			resultado = numero * cont;
+			System.out.print(numero +" x "+ cont +" = " + resultado);
+			System.out.print("\n");
+			cont ++;
+		}
+		
+		
+		//-----metodo do - While -----
+		System.out.print("-----metodo Do - While -----\n");
+		cont = 0 ;
+		do{
+			resultado = numero * cont;
+			System.out.print(numero +" x "+ cont +" = " + resultado);
+			System.out.print("\n");
+			cont ++;
+		}while (cont <= 10);
+		
+		
+		//-----metodo for -----
+		System.out.print("-----metodo for -----\n");
+		for(cont = 0 ; cont <= 10 ;cont++) {
+			resultado = numero * cont;
+			System.out.print(numero +" x "+ cont +" = " + resultado);
+			System.out.print("\n");
+		}
+		
+		}else {
+		
+			System.out.print("Numero invelido ! ");	
+		
+		}
+	}
+	
+	private static void Ex26(){
+		/*. Escreva um programa que calcule a soma de N números quaisquer fornecidos pelo usuário. O programa deve parar de ler
+			e, portanto somar os valores quando for introduzido o número 0 (zero). 
+		 */
+		int numero, resultado,soma = 0;
+		
+		Scanner ler = new Scanner(System.in);
+	
+		do{
+			System.out.print("Entre com um numero: ");
+			numero = ler.nextInt();
+			soma += numero;
+			System.out.print("Resultado : "+ soma);
+			System.out.print("\n");
+		}while (numero != 0);
+	}
+	
+	private static void Ex28(){
+		/*	28. Faça um programa que exiba a tabela verdade da operação E-Lógico para todas as combinações de três variáveis lógicas
+			A, B e C. Os resultados da tabela devem ser exibidos como F ou V. 
+		 */
+		int entrada, saida;
+		int A, B, C, D;    // variáveis de entrada
+		int n = 4;         // quantidade de variáveis
+		
+		Scanner ler = new Scanner(System.in);
+	
+		
+		   
+		System.out.print("\n  (A . ~B . C) + (A . ~D) + (~A . B . D)\n\n");
+		   
+		System.out.print("  A B C D | S\n ---------+---\n");
+		   
+		  //                          2^n - quantidade de linhas da tabela
+		  for(entrada = 0; entrada < (Math.pow( n,2 )); entrada++) {
+		       
+		      A = (entrada & 8)?1:0;         // x ? a:b <=> if(x) a; else b;
+		      B = (entrada & 4)?1:0;         // inline if
+		      C = (entrada & 2)?1:0;
+		       
+		      saida = (A & !B & C) | (A & !D) | (!A & B & D);      // expressão
+		       
+		      printf("  %d %d %d %d | %d\n", A, B, C, D, saida);     // saída
+		      }
+		  return 0;
+	}
+	
 }
