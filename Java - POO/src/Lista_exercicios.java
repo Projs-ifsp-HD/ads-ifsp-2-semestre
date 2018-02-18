@@ -752,19 +752,19 @@ public class Lista_exercicios {
 		if(n > 10 && n < 16){
 			switch(n){
 			case 11: 
-				System.out.print("\nOnze");
+				System.out.print(" Onze");
 					break;
 			case 12: 
-				System.out.print("\nDoze");
+				System.out.print(" Doze");
 					break;
 			case 13: 
-				System.out.print("\nTreze");
+				System.out.print(" Treze");
 					break;
 			case 14: 
-				System.out.print("\nQuatorze");
+				System.out.print(" Quatorze");
 					break;
 			case 15: 
-				System.out.print("\nQuinze");
+				System.out.print(" Quinze");
 					break;
 			}
 		}else{
@@ -773,31 +773,31 @@ public class Lista_exercicios {
 			
 			switch(dezena){
 			 case 1: 
-				 	System.out.print("\nDez");
+				 	System.out.print(" Dez");
 				 	break;
 			 case 2: 
-				 	System.out.print("\nVinte e ");
+				 	System.out.print(" Vinte e ");
 				 	break;
 			 case 3: 
-				 	System.out.print("\nTrinta e ");
+				 	System.out.print(" Trinta e ");
 				 	break;
 			 case 4: 
-				 	System.out.print("\nQuarenta e ");
+				 	System.out.print(" Quarenta e ");
 				 	break;
 			 case 5: 
-				 	System.out.print("\nCinquenta e ");
+				 	System.out.print(" Cinquenta e ");
 				 	break;
 			 case 6: 
-				 	System.out.print("\nSessenta e ");
+				 	System.out.print(" Sessenta e ");
 				 	break;
 			 case 7: 
-				 	System.out.print("\nSetenta e ");
+				 	System.out.print(" Setenta e ");
 				 	break;
 			 case 8: 
-				 	System.out.print("\nOitenta e ");
+				 	System.out.print(" Oitenta e ");
 				 	break;
 			 case 9: 
-				 	System.out.print("\nNoventa e ");
+				 	System.out.print(" Noventa e ");
 				 	break;
 			}
 			
