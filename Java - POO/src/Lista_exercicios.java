@@ -776,28 +776,28 @@ public class Lista_exercicios {
 				 	System.out.print(" Dez");
 				 	break;
 			 case 2: 
-				 	System.out.print(" Vinte e ");
+				 	System.out.print(" Vinte ");
 				 	break;
 			 case 3: 
-				 	System.out.print(" Trinta e ");
+				 	System.out.print(" Trinta ");
 				 	break;
 			 case 4: 
-				 	System.out.print(" Quarenta e ");
+				 	System.out.print(" Quarenta ");
 				 	break;
 			 case 5: 
-				 	System.out.print(" Cinquenta e ");
+				 	System.out.print(" Cinquenta ");
 				 	break;
 			 case 6: 
-				 	System.out.print(" Sessenta e ");
+				 	System.out.print(" Sessenta ");
 				 	break;
 			 case 7: 
-				 	System.out.print(" Setenta e ");
+				 	System.out.print(" Setenta ");
 				 	break;
 			 case 8: 
-				 	System.out.print(" Oitenta e ");
+				 	System.out.print(" Oitenta ");
 				 	break;
 			 case 9: 
-				 	System.out.print(" Noventa e ");
+				 	System.out.print(" Noventa ");
 				 	break;
 			}
 			
