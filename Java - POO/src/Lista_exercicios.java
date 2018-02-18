@@ -454,34 +454,6 @@ public class Lista_exercicios {
 		}while (numero != 0);
 	}
 	
-	private static void Ex28(){
-		/*	28. Faça um programa que exiba a tabela verdade da operação E-Lógico para todas as combinações de três variáveis lógicas
-			A, B e C. Os resultados da tabela devem ser exibidos como F ou V. 
-		 */
-		int entrada, saida;
-		int A, B, C, D;    // variáveis de entrada
-		int n = 4;         // quantidade de variáveis
-		
-		Scanner ler = new Scanner(System.in);
 	
-		
-		   
-		System.out.print("\n  (A . ~B . C) + (A . ~D) + (~A . B . D)\n\n");
-		   
-		System.out.print("  A B C D | S\n ---------+---\n");
-		   
-		  //                          2^n - quantidade de linhas da tabela
-		  for(entrada = 0; entrada < (Math.pow( n,2 )); entrada++) {
-		       
-		      A = (entrada & 8)?1:0;         // x ? a:b <=> if(x) a; else b;
-		      B = (entrada & 4)?1:0;         // inline if
-		      C = (entrada & 2)?1:0;
-		       
-		      saida = (A & !B & C) | (A & !D) | (!A & B & D);      // expressão
-		       
-		      printf("  %d %d %d %d | %d\n", A, B, C, D, saida);     // saída
-		      }
-		  return 0;
-	}
 	
 }
