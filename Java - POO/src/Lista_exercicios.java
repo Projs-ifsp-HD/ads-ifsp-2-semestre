@@ -4,7 +4,7 @@ public class Lista_exercicios {
 	public static void main(String[] args) {
 	//digite o execicio que deseja .
 		
-		Ex26();
+		Ex18();
 		
 		
 	}
@@ -397,13 +397,44 @@ public class Lista_exercicios {
 		System.out.print("Informe um número: ");
 			n = ler.nextInt();
 		if(n >= 0 && n <= 100){
-			
+				if(n > 10 && n < 20) {
+				switch(n) { 
+				case 11: 
+					 	System.out.print("\nOnze");
+					 	break;
+				 case 12: 
+					 	System.out.print("\nDoze");
+					 	break;
+				 case 13: 
+					 	System.out.print("\nTreze");
+					 	break;
+				 case 14: 
+					 	System.out.print("\nQuatorze");
+					 	break;
+				 case 15: 
+					 	System.out.print("\nQuinze");
+					 	break;
+				 case 16: 
+					 	System.out.print("\nDezesseis");
+					 	break;
+				 case 17: 
+					 	System.out.print("\nDezessete");
+					 	break;
+				 case 18: 
+					 	System.out.print("\nDezoito");
+					 	break;
+				 case 19: 
+					 	System.out.print("\nDezenove");
+					 	break;
+				}
+				}else {
 				dezena = n/10;
 				unidade = n%10;
 				switch(dezena){
+				
 				 case 1: 
-					 	System.out.print("\nDez");
-					 	break;
+				 	System.out.print("\nDez");
+				 	break;
 				 case 2: 
 					 	System.out.print("\nVinte");
 					 	break;
@@ -430,7 +461,7 @@ public class Lista_exercicios {
 					 	break;
 				}
 				
-				System.out.print(" e ");
+				if(unidade != 0) {System.out.print(" e ");}
 				
 				switch(unidade){
 				 case 1: 
@@ -462,9 +493,11 @@ public class Lista_exercicios {
 					 	break;
 				}
 			
+		}
 		}else{
 			System.out.print("\nNúmero inválido");
 		}
+		
 	} 
 	
 	private static float Ex20(){
