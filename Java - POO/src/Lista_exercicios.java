@@ -767,7 +767,7 @@ public class Lista_exercicios {
 	public static void escreveExtenso(int n){
 		int unidade, dezena;
 		
-		if(n > 10 && n < 16){
+		if(n > 10 && n < 20){
 			switch(n){
 			case 11: 
 				System.out.print(" Onze");
@@ -783,6 +783,18 @@ public class Lista_exercicios {
 					break;
 			case 15: 
 				System.out.print(" Quinze");
+					break;
+			case 16: 
+				System.out.print(" Dezesseis");
+					break;
+            case 17: 
+				System.out.print(" Dezessete");
+					break;
+            case 18: 
+				System.out.print(" Dezoito");
+					break;
+            case 19: 
+				System.out.print(" Dezenove");
 					break;
 			}
 		}else{
@@ -820,9 +832,6 @@ public class Lista_exercicios {
 			}
 			
 			switch(unidade){
-			 case 0:
-				 System.out.print("zero");
-				 	break;
 			 case 1: 
 				 	System.out.print("um");
 				 	break;
