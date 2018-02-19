@@ -744,7 +744,25 @@ public class Lista_exercicios {
 				System.out.print("F");
 			}
 		}
-	}		
+	}	
+	
+	private static void Ex30(){
+		Scanner ler = new Scanner(System.in);
+		float y, x, a = 2, b = 4;
+		
+		x = -1;
+		y = a*x + b;
+		System.out.print("f(x) = a*x + b = " + y);
+		
+		x = 0;
+		y = a*x + b;
+		System.out.print("\nf(x) = a*x + b = " + y);
+		
+		x = 1;
+		y = a*x + b;
+		System.out.print("\nf(x) = a*x + b = " + y);
+		
+	}
 	
 	public static void escreveExtenso(int n){
 		int unidade, dezena;
