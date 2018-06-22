@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1529707682 source:/home/halex/Documentos/projetao/main.c
+	<locale.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetao.h"
+
+1529707620 /home/halex/Documentos/projetao/projetao.h
+
+1529707766 source:/home/halex/Documentos/projetao/projetao.c
+	<locale.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"projetao.h"
+
