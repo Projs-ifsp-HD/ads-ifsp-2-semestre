@@ -20,3 +20,5 @@ void ordena_quicksort(func *vetDados, int inicio, int fim);
 
 int particiona(func *vetDados, int inicio, int fim);
 
+void gravaDados(func *vetDados);
+

@@ -117,3 +117,28 @@ int particiona(func *vetDados, int inicio, int fim){
     vetDados[dir] = pivo;
     return dir;
 }
+void gravaDados(func *vetDados){
+    FILE *arq;
+    arq = fopen("novaMassa.txt","w");
+    int i;
+	if(arq == NULL)
+			printf("Erro, nao foi possivel abrir o arquivo\n");
+	else{
+        for(i = 0 ; i != 9 ; i++){
+            fprintf(arq,"%d ;",vetDados[i].cod);
+
+            fprintf(arq,"%s ;",vetDados[i].nome);
+
+            fprintf(arq,"%d ;",vetDados[i].idade);
+
+            fprintf(arq,"%s ;",vetDados[i].empresa);
+
+            fprintf(arq,"%s ;",vetDados[i].dept);
+
+            fprintf(arq,"%.2f;\n",vetDados[i].salario);
+
+
+        }
+	}
+	fclose(arq);
+}

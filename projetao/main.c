@@ -21,6 +21,9 @@ int main()
     //mostra vetor
     mostraVetor(vetDados);
 
+    //grava os dados em um novo arquivo
+    gravaDados(vetDados);
+
     //menu
     //menu(op);
 
