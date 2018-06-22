@@ -40,6 +40,7 @@ void mostraVetor(func *vetDados){
     for(i=0; i != n ;i++){
         printf("Cod: %d \n", vetDados[i].cod);
         printf("Nome: %s \n", vetDados[i].nome);
+        printf("Nome: %d \n", vetDados[i].idade);
     }
 }
 
@@ -49,11 +50,8 @@ func *cria_lista_func(){
     vetDados = (func*) malloc(n * sizeof(func));
 
     if(vetDados == NULL){
-
         printf("Erro ao alocar memoria");
-
     }
-
     return vetDados;
 
 }
@@ -85,7 +83,6 @@ void menu(int op){
         break;
     }
 }
-
 
 void ordena_quicksort(func *vetDados, int inicio, int fim){
     func pivo;
