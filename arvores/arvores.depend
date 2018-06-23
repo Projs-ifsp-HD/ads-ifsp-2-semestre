@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1529712692 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/main.c
+1529713715 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/main.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreAVL.h"
@@ -19,12 +19,13 @@
 
 1529085435 /home/hamilton/Documentos/faculdade/ED2/projeto/arvores/arvoreLLRB.h
 
-1529713684 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/arvoreAVL.c
+1529723845 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/arvoreAVL.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreAVL.h"
+	"funcoes.h"
 
-1529713692 /home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/arvoreAVL.h
+1529723679 /home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/arvoreAVL.h
 
 1529712441 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/arvoreLLRB.c
 	<stdio.h>
@@ -32,4 +33,14 @@
 	"arvoreLLRB.h"
 
 1529709626 /home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/arvoreLLRB.h
+
+1529724652 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/funcoes.c
+	<locale.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arvoreAVL.h"
+	"funcoes.h"
+
+1529724052 /home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/funcoes.h
 

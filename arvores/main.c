@@ -2,10 +2,17 @@
 #include <stdlib.h>
 #include "arvoreAVL.h"
 #include "arvoreLLRB.h"
+#include "funcoes.h"
 
 int main(){
     int x;
     int y;
+    func *vetDados;///Vetor de struct
+    //cria e aloca memoria
+    vetDados = cria_lista_func();
+    //preenche com os dados
+    preenche_func(vetDados);
+
 
     printf("\n\nARVORE AVL\n\n");
     //ARVORE AVL
@@ -18,7 +25,15 @@ int main(){
     printf("\n");
 
     //Insere nas duas arvores
-    x = insere_arvAVL(raizAVL, 160);
+
+    preencheAVL(raizAVL, vetDados);
+    if(x){
+        printf("Elemento inserido");
+    }else{
+        printf("Não inserido");
+    }
+
+    //x = insere_arvAVL(raizAVL, vetDados);
     y = insere_arvoreLLRB(raizLLRB, 150);
 
 

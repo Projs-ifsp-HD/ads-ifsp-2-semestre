@@ -3,10 +3,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "arvoreAVL.h"
-
+#include "funcoes.h"
 struct NO{
     int info;
-    func *temp;
+    func vetDados;
     int alt; //inclui altura da sub-arvore
     struct NO *esq;
     struct NO *dir;
@@ -185,7 +185,7 @@ int mostra(arvAVL *raiz){
 }
 
 //Arquivo arvoreAVL.c
-int insere_arvAVL(arvAVL *raiz, func *vetDados,int codigo){
+int insere_arvAVL(arvAVL *raiz, func vetDados){
     int res; // pega resposta das chamadas de função
     if(*raiz == NULL){ //arvore vazia ou nó folha
         struct NO *novo;
@@ -193,8 +193,7 @@ int insere_arvAVL(arvAVL *raiz, func *vetDados,int codigo){
         if(novo == NULL){
             return 0;
         }
-        novo->info = codigo;
-        novo->temp = vetDados;
+        novo->vetDados = vetDados;
         novo->alt = 0;
         novo->esq = NULL;
         novo->dir = NULL;
@@ -202,10 +201,10 @@ int insere_arvAVL(arvAVL *raiz, func *vetDados,int codigo){
         return 1;
     }
     struct NO *atual = *raiz;
-    if(valor < atual->info){
-        if((res = insere_arvAVL(&(atual->esq), valor)) == 1){
+    if(vetDados.cod < atual->vetDados.cod){
+        if((res = insere_arvAVL(&(atual->esq), vetDados)) == 1){
             if(fatorBalanceamento_NO(atual) >= 2){
-                if(valor < (*raiz)->esq->info){
+                if(vetDados.cod < (*raiz)->esq->vetDados.cod){
                     rotacaoLL(raiz);
                 }else{
                     rotacaoLR(raiz);
@@ -214,10 +213,10 @@ int insere_arvAVL(arvAVL *raiz, func *vetDados,int codigo){
 
         }
     }else{
-        if(valor > atual->info){
-            if((res = insere_arvAVL(&(atual->dir), valor)) == 1){
+        if(vetDados.cod > atual->vetDados.cod){
+            if((res = insere_arvAVL(&(atual->dir), vetDados)) == 1){
                 if(fatorBalanceamento_NO(atual) >= 2){
-                    if((*raiz)->dir->info < valor){
+                    if((*raiz)->dir->vetDados.cod < vetDados.cod){
                         rotacaoRR(raiz);
                     }else{
                         rotacaoRL(raiz);
@@ -422,4 +421,3 @@ int consulta_arvAVL(arvAVL *raiz, int valor){
     }
     return 0;
 }
-

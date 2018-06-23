@@ -2,6 +2,8 @@
 *    Biblioteca Arvore AVL
 *
 */
+typedef struct Funcionarios func;
+
 //Arquivo arvoreAVL.h
 typedef struct NO *arvAVL;
 
@@ -30,7 +32,7 @@ void emOrdem_arvAVL(arvAVL *raiz);
 void posOrdem_arvAVL(arvAVL *raiz);
 
 //Arquivo arvoreAVL.h
-int insere_arvAVL(arvAVL *raiz, int valor);
+int insere_arvAVL(arvAVL *raiz, func vetDados);
 
 //Arquivo arvoreAVL.h
 int remove_arvAVL(arvAVL *raiz, int valor);
