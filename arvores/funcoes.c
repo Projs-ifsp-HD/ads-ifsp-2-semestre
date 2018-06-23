@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "arvoreAVL.h"
+#include "arvoreLLRB.h"
 #include "funcoes.h"
 
 void preenche_func(func *vetDados){
@@ -40,7 +41,16 @@ void preenche_func(func *vetDados){
 int preencheAVL(arvAVL *raiz, func *vetDados){
     int i, x=0;
     for(i=0; i < 9; i++){
-        //x = insere_arvAVL(raiz, vetDados[i]);
+        x = insere_arvAVL(raiz, vetDados[i]);
+    }
+
+    return x;
+}
+
+int preencheLLRB(arvoreLLRB *raiz, func *vetDados){
+    int i, x=0;
+    for(i=0; i < 9; i++){
+        x = insere_arvoreLLRB(raiz, vetDados[i]);
     }
 
     return x;

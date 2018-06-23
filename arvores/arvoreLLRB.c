@@ -2,11 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "arvoreLLRB.h"
-
+#include "funcoes.h"
 #define RED 1
 #define BLACK 0
+
 struct NO{
     int info;
+    func vetDados;
     struct NO *esq;
     struct NO *dir;
     int cor;
@@ -91,7 +93,7 @@ struct NO *balancear(struct NO *H){
     return H;
 }
 
-struct NO *insereNO(struct NO *H, int valor, int *resp){
+struct NO *insereNO(struct NO *H, func vetDados, int *resp){
     if(H == NULL){
         struct NO *novo;
         novo = (struct NO*) malloc(sizeof(struct NO));
@@ -99,20 +101,20 @@ struct NO *insereNO(struct NO *H, int valor, int *resp){
             *resp = 0;
             return NULL;
         }
-        novo->info = valor;
+        novo->vetDados = vetDados;
         novo->cor  = RED;
         novo->dir  = NULL;
         novo->esq  = NULL;
         *resp = 1;
         return novo;
     }
-    if(valor == H->info){
+    if(vetDados.cod == H->vetDados.cod){
         *resp = 0;
     }else{
-        if(valor < H->info){
-            H->esq = insereNO(H->esq, valor, resp);
+        if(vetDados.cod < H->vetDados.cod){
+            H->esq = insereNO(H->esq, vetDados, resp);
         }else{
-            H->dir = insereNO(H->dir, valor, resp);
+            H->dir = insereNO(H->dir, vetDados, resp);
         }
     }
     if(cor(H->dir) == RED && cor(H->esq) == BLACK){
@@ -177,10 +179,10 @@ struct NO *removeNO(struct NO *H, int valor){
     return balancear(H);
 }
 
-int insere_arvoreLLRB(arvoreLLRB *raiz, int valor){
+int insere_arvoreLLRB(arvoreLLRB *raiz, func vetDados){
     int resp;
     //função responsável pela busca do local de inserção do nó
-    *raiz = insereNO(*raiz, valor, &resp);
+    *raiz = insereNO(*raiz, vetDados, &resp);
     if((*raiz) != NULL){
         (*raiz)->cor = BLACK;
     }

@@ -2,6 +2,8 @@
 *    Biblioteca Arvore binária de Busca
 *
 */
+typedef struct Funcionarios func;
+
 //Arquivo arvoreLLRB.h
 typedef struct NO *arvoreLLRB;
 
@@ -29,8 +31,7 @@ void emOrdem_arvoreLLRB(arvoreLLRB *raiz);
 //Arquivo arvoreLLRB.h
 void posOrdem_arvoreLLRB(arvoreLLRB *raiz);
 
-//Arquivo arvoreLLRB.h
-int insere_arvoreLLRB(arvoreLLRB *raiz, int valor);
+int insere_arvoreLLRB(arvoreLLRB *raiz, func vetDados);
 
 //Arquivo arvoreLLRB.h
 int remove_arvoreLLRB(arvoreLLRB *raiz, int valor);

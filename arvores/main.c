@@ -8,24 +8,18 @@ int main(){
     int x;
     int y;
     func *vetDados;///Vetor de struct
-    //cria e aloca memoria
+    arvAVL *raizAVL;
+    arvoreLLRB *raizLLRB;
+
     vetDados = cria_lista_func();
-    //preenche com os dados
     preenche_func(vetDados);
 
 
     printf("\n\nARVORE AVL\n\n");
-    //ARVORE AVL
-    arvAVL *raizAVL;
-    arvoreLLRB *raizLLRB;
-
-    //Cria as duas arvores
     raizAVL = cria_arvAVL();
     raizLLRB = cria_arvoreLLRB();
+
     printf("\n");
-
-    //Insere nas duas arvores
-
     x = preencheAVL(raizAVL, vetDados);
     if(x){
         printf("Elemento inserido\n");
@@ -33,6 +27,10 @@ int main(){
         printf("Não inserido\n\n");
     }
 
+    x = totalNO_arvAVL(raizAVL);
+    printf("Total de NÒS: %d\n", x);
+
+    //Verifica se a AVL está vazia
     if(vazia_arvAVL(raizAVL)){
         printf("A arvore esta vazia.");
     }else{
@@ -40,19 +38,26 @@ int main(){
     }
     printf("\n");
 
-    //x = insere_arvAVL(raizAVL, vetDados);
-    //y = insere_arvoreLLRB(raizLLRB, 150);
-
-
-    x = mostra(raizAVL);
-    //Verifica se a AVL está vazia
-
-
     //Libera a AVL
     liberar_arvAVL(raizAVL);
     printf("\n\n\n");
 
+    //x = insere_arvAVL(raizAVL, vetDados);
+    //y = insere_arvoreLLRB(raizLLRB, 150);
+
     printf("\n\nARVORE RUBRO NEGRA\n\n");
+    y = preencheLLRB(raizLLRB, vetDados);
+    if(y){
+        printf("Elemento inserido\n");
+    }else{
+        printf("Não inserido\n\n");
+    }
+    x = totalNO_arvoreLLRB(raizAVL);
+    printf("Total de NÒS LBBR: %d\n\n", x);
+
+
+
+
     //Verifica se a rubro negra está vazia
     if(vazia_arvoreLLRB(raizLLRB)){
         printf("A arvore esta vazia.");
