@@ -179,6 +179,10 @@ void rotacaoRL(arvAVL *raiz){
     rotacaoRR(raiz);
 }
 
+int mostra(arvAVL *raiz){
+    printf("Código: %d", (*raiz)->info);
+}
+
 //Arquivo arvoreAVL.c
 int insere_arvAVL(arvAVL *raiz, int valor){
     int res; // pega resposta das chamadas de função

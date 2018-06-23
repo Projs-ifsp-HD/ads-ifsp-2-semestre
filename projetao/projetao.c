@@ -42,7 +42,7 @@ void mostraVetor(func *vetDados){
         printf("Nome: %s \n", vetDados[i].nome);
         printf("Nome: %d \n", vetDados[i].idade);
     }
-    cin.ignore(cin.rdbuf()->in_avail()+1);
+    getchar();
 }
 
 func *cria_lista_func(){
@@ -88,7 +88,6 @@ void menu(int op,func *vetDados){
 
             //grava os dados em um novo arquivo
             gravaDados(vetDados);
-
             break;
         case 2:
             //mostra vetor
@@ -98,6 +97,9 @@ void menu(int op,func *vetDados){
             gravaDados(vetDados);
             break;
         }
+        printf("Precione ENTER tecla para continua...");
+
+        getchar();
     }while(op != 0);
     exit(0);
 }

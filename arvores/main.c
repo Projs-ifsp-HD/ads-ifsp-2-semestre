@@ -21,6 +21,8 @@ int main(){
     x = insere_arvAVL(raizAVL, 160);
     y = insere_arvoreLLRB(raizLLRB, 150);
 
+
+    x = mostra(raizAVL);
     //Verifica se a AVL está vazia
     if(vazia_arvAVL(raizAVL)){
         printf("A arvore esta vazia.");

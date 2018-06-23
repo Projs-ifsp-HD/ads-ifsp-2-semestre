@@ -5,7 +5,6 @@
 
 #define RED 1
 #define BLACK 0
-
 struct NO{
     int info;
     struct NO *esq;
