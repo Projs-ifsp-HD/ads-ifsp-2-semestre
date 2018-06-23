@@ -31,14 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../../arvores/arvoreAVL.c">
+		<Unit filename="arvoreAVL.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../arvores/arvoreAVL.h" />
-		<Unit filename="../../arvores/arvoreLLRB.c">
+		<Unit filename="arvoreAVL.h" />
+		<Unit filename="arvoreLLRB.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../arvores/arvoreLLRB.h" />
+		<Unit filename="arvoreLLRB.h" />
+		<Unit filename="funcoes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funcoes.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

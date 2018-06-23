@@ -2,9 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <locale.h>
+#include <sys/time.h>
 #include "arvoreAVL.h"
 #include "arvoreLLRB.h"
 #include "funcoes.h"
+#define N 14999
+
+double calcTempo(struct timeval tempo_inicio, struct timeval tempo_fim);
 
 void preenche_func(func *vetDados){
     FILE *f;
@@ -23,8 +29,6 @@ void preenche_func(func *vetDados){
     strcpy(dept,strtok(NULL,"/"));
     strcpy(sal,strtok(NULL,"\n"));
 
-
-    strreplace(sal, ',','.');
     vetDados[i].cod=atoi(cod);
     vetDados[i].idade=atoi(idade);
     vetDados[i].salario = atof(sal);
@@ -40,7 +44,7 @@ void preenche_func(func *vetDados){
 
 int preencheAVL(arvAVL *raiz, func *vetDados){
     int i, x=0;
-    for(i=0; i < 9; i++){
+    for(i=0; i < N; i++){
         x = insere_arvAVL(raiz, vetDados[i]);
     }
 
@@ -49,7 +53,7 @@ int preencheAVL(arvAVL *raiz, func *vetDados){
 
 int preencheLLRB(arvoreLLRB *raiz, func *vetDados){
     int i, x=0;
-    for(i=0; i < 9; i++){
+    for(i=0; i < N; i++){
         x = insere_arvoreLLRB(raiz, vetDados[i]);
     }
 
@@ -57,19 +61,17 @@ int preencheLLRB(arvoreLLRB *raiz, func *vetDados){
 }
 
 void mostraVetor(func *vetDados){
-    int i , n = 9;
-    for(i=0; i != n ;i++){
-        printf("Cod: %d \n", vetDados[i].cod);
+    int i;
+    for(i=0; i != N ;i++){
+        printf("Cod: %d | ", vetDados[i].cod);
         printf("Nome: %s \n", vetDados[i].nome);
-        printf("Nome: %d \n", vetDados[i].idade);
     }
     getchar();
 }
 
 func *cria_lista_func(){
-    int n = 9;
     func *vetDados;
-    vetDados = (func*) malloc(n * sizeof(func));
+    vetDados = (func*) malloc(N * sizeof(func));
 
     if(vetDados == NULL){
         printf("Erro ao alocar memoria");
@@ -78,51 +80,102 @@ func *cria_lista_func(){
 
 }
 
-void strreplace(char *s, char chr, char repl_chr){
-     int i=0;
-     while(s[i]!='\0')
-     {
-           if(s[i]==chr)
-           {
-               s[i]=repl_chr;
-           }
-           i++;
-     }
-    return;
-}
-
-void menu(int op,func *vetDados){
+void menu(int op,func *vetDados, arvAVL raizAVL, arvoreLLRB raizLLRB){
+    int x, y;
+    struct timeval tempo_inicio,tempo_fim;
+    double ti,tf,tempo;
+    float tempoAVLDesord, tempoAVLOrd, tempoLLRBDesord, tempoLLRBOrd;
     do{
         system("clear");
+        ///system("cls");
+        printf("Esse programa tem como objetivo mostrar a comparação da Inserção de dados em uma Arvore. ");
+        printf("Usaremos para comparar Avl e Rubro-Negra.\n\n");
+        printf("Valores Ordenados - 1\n");
+        printf("Valores Desordenados - 2\n");
         printf("Escolha o tipo de comparação:\n");
-        printf("Valores Desordenados - 1\n");
-        printf("Valores Ordenados - 2\n");
         printf("Sair - 0\n");
         scanf("%d",&op);
         switch(op){
         case 1:
-            //ordena
-            ordena_quicksort(vetDados,0,8);
+            gettimeofday(&tempo_inicio,NULL);
+                ordena_quicksort(vetDados,0,N-1);
+                gravaDados(vetDados);
 
-            //mostra vetor
-            mostraVetor(vetDados);
+                printf("Arvore AVL:\n");
+                x = preencheAVL(raizAVL, vetDados);
+                if(x){
+                    printf("Elemento inserido\n");
+                }else{
+                    printf("Não inserido\n\n");
+                }
+                x = totalNO_arvAVL(raizAVL);
+                printf("Total de NÒS: %d\n\n", x);
+            gettimeofday(&tempo_fim,NULL);
+            tempoAVLOrd = calcTempo(tempo_inicio,tempo_fim);
 
-            //grava os dados em um novo arquivo
-            gravaDados(vetDados);
+
+            gettimeofday(&tempo_inicio,NULL);
+                ordena_quicksort(vetDados,0,N-1);
+                printf("\nArvore LLRB:\n");
+                y = preencheLLRB(raizLLRB, vetDados);
+                if(y){
+                    printf("Elemento inserido\n");
+                }else{
+                    printf("Não inserido\n\n");
+                }
+                y = totalNO_arvoreLLRB(raizLLRB);
+                printf("Total de NÒS: %d\n\n", y);
+            gettimeofday(&tempo_fim,NULL);
+            tempoLLRBOrd = calcTempo(tempo_inicio,tempo_fim);
+
+
+            printf("\n\nTempo gasto durante a operação:");
+            printf("\nInserção ordenada na AVL: %.3f milisegunos", tempoAVLOrd/1000);
+            printf("\nInserção ordenada na LLRB: %.3f milisegundos", tempoLLRBOrd/1000);
             break;
         case 2:
-            //mostra vetor
-            mostraVetor(vetDados);
 
-            //grava os dados em um novo arquivo
-            gravaDados(vetDados);
+            gettimeofday(&tempo_inicio,NULL);
+                printf("Arvore AVL:\n");
+                x = preencheAVL(raizAVL, vetDados);
+                if(x){
+                    printf("Elemento inserido\n");
+                }else{
+                    printf("Não inserido\n\n");
+                }
+                x = totalNO_arvAVL(raizAVL);
+                printf("Total de NÒS: %d\n\n", x);
+            gettimeofday(&tempo_fim,NULL);
+            tempoAVLDesord = calcTempo(tempo_inicio,tempo_fim);
+
+            gettimeofday(&tempo_inicio,NULL);
+                printf("\nArvore LLRB:\n");
+                y = preencheLLRB(raizLLRB, vetDados);
+                if(y){
+                    printf("Elemento inserido\n");
+                }else{
+                    printf("Não inserido\n\n");
+                }
+                y = totalNO_arvoreLLRB(raizLLRB);
+                printf("Total de NÒS: %d\n\n", y);
+            gettimeofday(&tempo_fim,NULL);
+            tempoLLRBDesord = calcTempo(tempo_inicio,tempo_fim);
+
+
+            printf("\n\nTempo gasto durante a operação:");
+            printf("\nInserção Desordenada na AVL: %.3f", tempoAVLDesord/1000);
+            printf("\nInserção Desordenada na LLRB: %.3f", tempoLLRBDesord/1000);
             break;
-        }
-        printf("Precione ENTER tecla para continua...");
 
+        default:
+            printf("\n\nPrograma encerrado!");
+            exit(0);
+        }
+        printf("\n\nPrecione ENTER tecla para continua...");
+        getchar();
         getchar();
     }while(op != 0);
-    exit(0);
+
 }
 
 void ordena_quicksort(func *vetDados, int inicio, int fim){
@@ -132,9 +185,7 @@ void ordena_quicksort(func *vetDados, int inicio, int fim){
         ordena_quicksort(vetDados,inicio,pivo.cod - 1);
         ordena_quicksort(vetDados,pivo.cod + 1,fim);
     }
-
 }
-
 int particiona(func *vetDados, int inicio, int fim){
     func pivo,aux;
     int  esq, dir;
@@ -158,6 +209,7 @@ int particiona(func *vetDados, int inicio, int fim){
     vetDados[dir] = pivo;
     return dir;
 }
+
 void gravaDados(func *vetDados){
     FILE *arq;
     arq = fopen("novaMassa.txt","w");
@@ -165,23 +217,29 @@ void gravaDados(func *vetDados){
 	if(arq == NULL)
 			printf("Erro, nao foi possivel abrir o arquivo\n");
 	else{
-        for(i = 0 ; i != 9 ; i++){
-            fprintf(arq,"%d ;",vetDados[i].cod);
+        for(i = 0 ; i != N ; i++){
+            fprintf(arq,"%d/",vetDados[i].cod);
 
-            fprintf(arq,"%s ;",vetDados[i].nome);
+            fprintf(arq,"%s/",vetDados[i].nome);
 
-            fprintf(arq,"%d ;",vetDados[i].idade);
+            fprintf(arq,"%d/",vetDados[i].idade);
 
-            fprintf(arq,"%s ;",vetDados[i].empresa);
+            fprintf(arq,"%s/",vetDados[i].empresa);
 
-            fprintf(arq,"%s ;",vetDados[i].dept);
+            fprintf(arq,"%s/",vetDados[i].dept);
 
             fprintf(arq,"%.2f;\n",vetDados[i].salario);
-
-
         }
 	}
 	fclose(arq);
 }
 
-///
+double calcTempo(struct timeval tempo_inicio, struct timeval tempo_fim){
+    double tempo, tf, ti;
+    ti = tf = tempo = 0;
+
+    tf = (double)tempo_fim.tv_usec + ((double)tempo_fim.tv_sec * (1000000.0));
+    ti = (double)tempo_inicio.tv_usec + ((double)tempo_inicio.tv_sec * (1000000.0));
+    tempo = (tf - ti);
+    return tempo;
+}
