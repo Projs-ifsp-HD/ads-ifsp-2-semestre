@@ -41,11 +41,14 @@
 
 1529768594 /home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/arvoreLLRB.h
 
-1529778535 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/funcoes.c
+1529781452 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/funcoes.c
 	<locale.h>
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<time.h>
+	<locale.h>
+	<sys/time.h>
 	"arvoreAVL.h"
 	"arvoreLLRB.h"
 	"funcoes.h"

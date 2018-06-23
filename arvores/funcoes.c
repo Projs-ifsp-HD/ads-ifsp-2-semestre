@@ -100,7 +100,8 @@ void menu(int op,func *vetDados, arvAVL raizAVL, arvoreLLRB raizLLRB){
             gettimeofday(&tempo_inicio,NULL);
                 ordena_quicksort(vetDados,0,N-1);
                 gravaDados(vetDados);
-
+                system("clear");
+                ///system("cls");
                 printf("Arvore AVL:\n");
                 x = preencheAVL(raizAVL, vetDados);
                 if(x){
@@ -119,7 +120,7 @@ void menu(int op,func *vetDados, arvAVL raizAVL, arvoreLLRB raizLLRB){
                 printf("\nArvore LLRB:\n");
                 y = preencheLLRB(raizLLRB, vetDados);
                 if(y){
-                    printf("Elemento inserido\n");
+                    printf("Elementos inseridos\n");
                 }else{
                     printf("Não inserido\n\n");
                 }
@@ -134,7 +135,8 @@ void menu(int op,func *vetDados, arvAVL raizAVL, arvoreLLRB raizLLRB){
             printf("\nInserção ordenada na LLRB: %.3f milisegundos", tempoLLRBOrd/1000);
             break;
         case 2:
-
+            system("clear");
+            ///system("cls");
             gettimeofday(&tempo_inicio,NULL);
                 printf("Arvore AVL:\n");
                 x = preencheAVL(raizAVL, vetDados);
@@ -152,7 +154,7 @@ void menu(int op,func *vetDados, arvAVL raizAVL, arvoreLLRB raizLLRB){
                 printf("\nArvore LLRB:\n");
                 y = preencheLLRB(raizLLRB, vetDados);
                 if(y){
-                    printf("Elemento inserido\n");
+                    printf("Elementos inseridos\n");
                 }else{
                     printf("Não inserido\n\n");
                 }
@@ -160,8 +162,6 @@ void menu(int op,func *vetDados, arvAVL raizAVL, arvoreLLRB raizLLRB){
                 printf("Total de NÒS: %d\n\n", y);
             gettimeofday(&tempo_fim,NULL);
             tempoLLRBDesord = calcTempo(tempo_inicio,tempo_fim);
-
-
             printf("\n\nTempo gasto durante a operação:");
             printf("\nInserção Desordenada na AVL: %.3f", tempoAVLDesord/1000);
             printf("\nInserção Desordenada na LLRB: %.3f", tempoLLRBDesord/1000);
