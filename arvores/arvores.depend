@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1529713715 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/main.c
+1529725409 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/main.c
 	<stdio.h>
 	<stdlib.h>
 	"arvoreAVL.h"
 	"arvoreLLRB.h"
+	"funcoes.h"
 
 1529085314 source:/home/hamilton/Documentos/faculdade/ED2/projeto/arvores/arvoreAVL.c
 	<stdio.h>
@@ -34,7 +35,7 @@
 
 1529709626 /home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/arvoreLLRB.h
 
-1529724652 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/funcoes.c
+1529725372 source:/home/hamilton/Documentos/faculdade/ED2/projeto/ads-ifsp-2-semestre/arvores/funcoes.c
 	<locale.h>
 	<stdio.h>
 	<stdlib.h>

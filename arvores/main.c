@@ -26,25 +26,27 @@ int main(){
 
     //Insere nas duas arvores
 
-    preencheAVL(raizAVL, vetDados);
+    x = preencheAVL(raizAVL, vetDados);
     if(x){
-        printf("Elemento inserido");
+        printf("Elemento inserido\n");
     }else{
-        printf("Não inserido");
+        printf("Não inserido\n\n");
     }
 
-    //x = insere_arvAVL(raizAVL, vetDados);
-    y = insere_arvoreLLRB(raizLLRB, 150);
-
-
-    x = mostra(raizAVL);
-    //Verifica se a AVL está vazia
     if(vazia_arvAVL(raizAVL)){
         printf("A arvore esta vazia.");
     }else{
         printf("A Arvore possui elementos.");
     }
     printf("\n");
+
+    //x = insere_arvAVL(raizAVL, vetDados);
+    //y = insere_arvoreLLRB(raizLLRB, 150);
+
+
+    x = mostra(raizAVL);
+    //Verifica se a AVL está vazia
+
 
     //Libera a AVL
     liberar_arvAVL(raizAVL);

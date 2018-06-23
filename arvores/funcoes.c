@@ -37,11 +37,13 @@ void preenche_func(func *vetDados){
 
 }
 
-void preencheAVL(arvAVL *raiz, func *vetDados){
-    int i;
+int preencheAVL(arvAVL *raiz, func *vetDados){
+    int i, x=0;
     for(i=0; i < 9; i++){
-        insere_arvAVL(raiz, vetDados[i]);
+        //x = insere_arvAVL(raiz, vetDados[i]);
     }
+
+    return x;
 }
 
 void mostraVetor(func *vetDados){
