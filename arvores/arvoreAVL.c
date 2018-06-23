@@ -6,6 +6,7 @@
 
 struct NO{
     int info;
+    func *temp;
     int alt; //inclui altura da sub-arvore
     struct NO *esq;
     struct NO *dir;
@@ -184,7 +185,7 @@ int mostra(arvAVL *raiz){
 }
 
 //Arquivo arvoreAVL.c
-int insere_arvAVL(arvAVL *raiz, int valor){
+int insere_arvAVL(arvAVL *raiz, func *vetDados,int codigo){
     int res; // pega resposta das chamadas de função
     if(*raiz == NULL){ //arvore vazia ou nó folha
         struct NO *novo;
@@ -192,7 +193,8 @@ int insere_arvAVL(arvAVL *raiz, int valor){
         if(novo == NULL){
             return 0;
         }
-        novo->info = valor;
+        novo->info = codigo;
+        novo->temp = vetDados;
         novo->alt = 0;
         novo->esq = NULL;
         novo->dir = NULL;
