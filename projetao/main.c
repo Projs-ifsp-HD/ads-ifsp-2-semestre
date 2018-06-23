@@ -15,17 +15,8 @@ int main()
     //preenche com os dados
     preenche_func(vetDados);
 
-    //ordena
-    ordena_quicksort(vetDados,0,8);
-
-    //mostra vetor
-    mostraVetor(vetDados);
-
-    //grava os dados em um novo arquivo
-    gravaDados(vetDados);
-
     //menu
-    //menu(op);
+    menu(op,vetDados);
 
     return 0;
 }

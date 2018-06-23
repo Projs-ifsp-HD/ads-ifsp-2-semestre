@@ -42,6 +42,7 @@ void mostraVetor(func *vetDados){
         printf("Nome: %s \n", vetDados[i].nome);
         printf("Nome: %d \n", vetDados[i].idade);
     }
+    cin.ignore(cin.rdbuf()->in_avail()+1);
 }
 
 func *cria_lista_func(){
@@ -69,19 +70,36 @@ void strreplace(char *s, char chr, char repl_chr){
     return;
 }
 
-void menu(int op){
-    printf("Escolha a Arvore:\n");
-    printf("Rubro Negra - 1");
-    printf("\t|| AVL - 2\n");
-    scanf("%d",&op);
-    switch(op){
-    case 1:
-        printf("Rubro");
-        break;
-    case 2:
-        printf("AVL");
-        break;
-    }
+void menu(int op,func *vetDados){
+    do{
+        system("clear");
+        printf("Escolha o tipo de comparação:\n");
+        printf("Valores Desordenados - 1\n");
+        printf("Valores Ordenados - 2\n");
+        printf("Sair - 0\n");
+        scanf("%d",&op);
+        switch(op){
+        case 1:
+            //ordena
+            ordena_quicksort(vetDados,0,8);
+
+            //mostra vetor
+            mostraVetor(vetDados);
+
+            //grava os dados em um novo arquivo
+            gravaDados(vetDados);
+
+            break;
+        case 2:
+            //mostra vetor
+            mostraVetor(vetDados);
+
+            //grava os dados em um novo arquivo
+            gravaDados(vetDados);
+            break;
+        }
+    }while(op != 0);
+    exit(0);
 }
 
 void ordena_quicksort(func *vetDados, int inicio, int fim){
